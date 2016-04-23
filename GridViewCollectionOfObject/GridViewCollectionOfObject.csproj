@@ -96,7 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Note.cs" />
-    <Compile Include="Models\Notifications.cs" />
+    <Compile Include="Notifications.cs" />
     <Compile Include="ViewModels\VMNote.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
