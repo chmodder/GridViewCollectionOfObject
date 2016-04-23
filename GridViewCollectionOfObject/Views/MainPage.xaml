@@ -35,6 +35,7 @@
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
 
+            <!--************************This is for testing and learning****Probably not going to implement it***********-->
             <!--<GridView.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
