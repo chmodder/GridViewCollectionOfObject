@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="GridViewCollectionOfObject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:GridViewCollectionOfObject.ViewModels"
+    xmlns:m="using:GridViewCollectionOfObject.Models"
+    xmlns:local="using:GridViewCollectionOfObject"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.DataContext>
+            <vm:VMNote/>
+        </Grid.DataContext>
+
+        <GridView ItemsSource="{Binding NoteList}" IsItemClickEnabled="True" Background="DodgerBlue">
+
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="m:Note">
+                    <StackPanel Margin="10,10,10,10">
+                        <Border Background="LightGray" Height="80" Width="300" Padding="20,10,10,10">
+                            <TextBlock TextWrapping="WrapWholeWords" Text="{x:Bind Subject}" Style="{StaticResource HeaderTextBlockStyle}" FontSize="24"/>
+                        </Border>
+                        <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" MaxLines="1" Text="{x:Bind NoteText}" Padding="20,0,0,0" Style="{StaticResource BodyTextBlockStyle}" FontSize="11"/>
+                        <TextBlock TextWrapping="wrap" Text="{x:Bind CreationDate}" Padding="20,0,0,0" Style="{StaticResource BodyTextBlockStyle}" FontSize="11"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid MaximumRowsOrColumns="3"/>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+
+            <!--<GridView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate x:DataType="m:Note">
+                            <StackPanel>
+                                <TextBlock TextWrapping="WrapWholeWords" FontSize="14" FontWeight="Bold" Text="{x:Bind Subject}"/>
+                                <TextBlock TextWrapping="WrapWholeWords" Text="{x:Bind NoteText}"/>
+                                <TextBlock TextWrapping="WrapWholeWords" Text="{x:Bind CreationDate}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </GridView.GroupStyle>-->
+            <!--*****************************************GroupStyle not finished*****************************************-->
+
+        </GridView>
+    </Grid>
+</Page>
